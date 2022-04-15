@@ -1,0 +1,39 @@
+ex1)딕셔너리를 이용하여, 
+"Pokemon"을 입력하면 "Pikachu", 
+"Digimon"을 입력하면 "Agumon", 
+"Yugioh"를 입력하면 "Black Magician", 
+그 외의 문자열이 입력되면 "I don't know"를 출력하는 프로그램을 작성하시오.
+i = input()
+dic = {
+    "Pokemon" : "Pikachu",
+    "Digimon" : "Agumon",
+    "Yugioh" : "Black Magician"
+}
+print(dic.get(i, "I don't know"))
+
+
+ex2)정수를 입력받아 입력받은 정수만큼 반복하면서, 각 줄에 나라의 이름과 그 나라의 수도를 공백을
+사이에 두고 입력받는다. 그 후에, 나라의 이름을 입력받아 그 나라의 수도를 출력하는 프로그램을
+작성하라. 만약 나라가 입력된 적이 없으면, Unknown Country을 출력한다
+a = int(input())
+d = {}
+for i in range(a):
+    key, value = input().split()
+    d[key] = value
+print(d.get(input(), "Unknown Country"))
+
+
+ex3)야구선수들의 파울 기록을 입력 받아, 파울을 가장 적게 한 선수를 모두 출력하고, 최소 파울 횟수를 마지막에 출력하는 프로그램을 작성하시오.
+players = input().split()
+fouls = {}
+for i in players:
+    if i in fouls:
+        fouls[i] += 1
+    else:
+        fouls[i] = 1
+min_foul = min(fouls.values())
+
+for i in fouls:
+    if fouls[i] == min_foul:
+        print(i)
+print(min_foul) 
